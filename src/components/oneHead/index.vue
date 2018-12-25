@@ -121,10 +121,11 @@
 
 <style lang="less">
   .header{
-    position: fixed;
+    position: absolute;
     width: 100%;
     background: transparent;
     color: #fff;
+    z-index: 99;
     &.active{
       background: #000;
     }
