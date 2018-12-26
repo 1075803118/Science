@@ -5,6 +5,9 @@
     <listX></listX>
     <technology></technology>
     <expert></expert>
+    <activity></activity>
+    <eduSection></eduSection>
+    <Success></Success>
   </div>
 </template>
 
@@ -15,6 +18,9 @@
   import listX from './listX/index.vue'//内容事件展示
   import technology from './technology/index.vue'//汇聚全球技术 助力企业升级
   import expert from './expert/index.vue'//行业顶尖专家 资深技术顾问
+  import activity from './activity/index.vue'//行业热门活动 技术交流盛会
+  import eduSection from './eduSection/index.vue'//闯创新之道 登浪潮之巅
+  import Success from './Success/index.vue'//成功案例
   export default {
     name: "homeComponents",
     components:{
@@ -22,7 +28,10 @@
       newsList,
       listX,
       technology,
-      expert
+      expert,
+      activity,
+      eduSection,
+      Success
     }
   }
 </script>
@@ -30,7 +39,6 @@
 <style lang="less">
   .home{
     width: 100%;
-    height: 100vh;
     background: #eee;
   }
   .w{
@@ -38,5 +46,10 @@
     width: 100%;
     margin: auto;
     position: relative;
+  }
+  .ellipsis{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
   }
 </style>

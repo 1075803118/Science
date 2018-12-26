@@ -1,8 +1,8 @@
 <template>
-  <section id="technology-section" class="section-block technology-section">
+  <section class="section-block technology-section" :style="{background: bargeundColor}">
     <div class="head">
       <h2>{{h2N}}</h2>
-      <p class="head-text">{{h2XN}}</p>
+      <p class="head-text" @click="childS(h2XNHref)">{{h2XN}}</p>
       <div class="tab-container">
         <template v-for="item in menuList">
           <span class="tab-text">{{item.name}}</span>
@@ -14,7 +14,7 @@
       <div class="technology-list">
         <slot></slot>
       </div>
-      <div class="technology-black">{{btn}}</div>
+      <div class="technology-black" v-if="btn">{{btn}}</div>
     </div>
   </section>
 </template>
@@ -43,6 +43,19 @@
       btn:{
         type: String,
         default: ''
+      },
+      bargeundColor:{
+        type: String,
+        default: ''
+      },
+      h2XNHref:{
+        type:String,
+        default:''
+      }
+    },
+    methods:{
+      childS(href){
+        console.log(href)
       }
     }
   }
@@ -54,14 +67,14 @@
     z-index: 1;
     padding-bottom: 0;
     height: 697px;
-    background: #fff;
     .head {
       margin-bottom: 38px;
     }
+    padding-top: 80px;
   }
 
   .section-block {
-    padding-top: 80px;
+
     .technology-black{
       display: block;
       width: 170px;

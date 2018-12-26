@@ -18,19 +18,7 @@
 <style lang="less">
   .home{
     width: 100%;
-    height: 100vh;
+
     background: #eee;
-  }
-  .w{
-    max-width: 1240px;
-    width: 100%;
-    margin: auto;
-    position: relative;
-  }
-  .pull-left {
-    float: left !important;
-  }
-  .pull-right {
-    float: right!important;
   }
 </style>

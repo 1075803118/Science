@@ -1,5 +1,5 @@
 <template>
-    <block-con :menuList="menuList" :h2N="h2N" :h2XN="h2XN" :btn="btn">
+    <block-con :menuList="menuList" :h2N="h2N" :h2XN="h2XN" :btn="btn" bargeundColor="#fff" >
         <div class="row ">
           <div class="technology-list-item">
             <div class="list-item-wrapper">
@@ -175,6 +175,7 @@
         h2N: '汇聚全球技术 助力企业升级',
         h2XN:'2000+成熟技术项目正在推广中',
         btn:'查看更多化学化工技术',
+        h2XNHref:''
       }
     },
   }
@@ -182,7 +183,7 @@
 
 <style lang="less">
   .section-block {
-    padding-top: 80px;
+
     .row {
       margin-right: -15px;
       margin-left: -15px;
