@@ -1,9 +1,9 @@
 <template>
-  <div class="floor-nav-container floatS" style="">
-    <div class="list-item">找<br>技术</div>
-    <div class="list-item">问<br>专家</div>
-    <div class="list-item">报<br>活动</div>
-    <div class="list-item no-bottom active">学<br>创新</div>
+  <div class="floor-nav-container floatS" :class="{active:IsScroll>=650}">
+    <backTheTopJs number="650" time="500" :class="{active:IsScroll<1300&&IsScroll>=650}" class="list-item">找<br>技术</backTheTopJs>
+    <backTheTopJs number="1300" time="500" :class="{active:IsScroll<2000&&IsScroll>=1300}" class="list-item">问<br>专家</backTheTopJs>
+    <backTheTopJs number="2000" time="500" :class="{active:IsScroll<2550&&IsScroll>=2000}" class="list-item">报<br>活动</backTheTopJs>
+    <backTheTopJs number="2550" time="500" :class="{active:IsScroll<3500&&IsScroll>=2550}" class="list-item no-bottom">学<br>创新</backTheTopJs>
     <backTheTopJs number="0" time="500" class="list-item list-url no-bottom">回到顶部</backTheTopJs>
   </div>
 </template>
@@ -15,6 +15,20 @@
     components:{
       backTheTopJs
     },
+    created(){
+      window.addEventListener('scroll', this.handleScroll)
+    },
+    data(){
+      return{
+        IsScroll:0
+      }
+    },
+    methods:{
+      handleScroll(){
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        this.IsScroll = scrollTop
+      }
+    }
   }
 </script>
 
@@ -31,6 +45,10 @@
     left: -720px;
     font-size: 14px;
     background-color: #086dbb;
+    display: none;
+    &.active{
+      display: block;
+    }
     .list-item{
       padding: 12px 8px;
       line-height: 1.2;
@@ -50,7 +68,7 @@
         height: 1px;
         background-color: #fff;
       }
-      &.active{
+      &.active,&:hover{
         background-color: #f3ab1e;
       }
       &.list-url{
