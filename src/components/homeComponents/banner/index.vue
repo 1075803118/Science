@@ -14,57 +14,33 @@
       </ul>
       <div class="tab-container">
         <div class="tab-header">
-          <div class="tab-header-item">
-            热门技术
-          </div>
-          <div class="tab-header-item active">
-            热门活动
-          </div>
-          <div class="tab-header-item">
-            热门资讯
+          <div class="tab-header-item"
+               v-for="(item,index) in txtList"
+               :class="{active:index === txtIndex}"
+               @click="txtClick(index)">{{item.title}}
           </div>
         </div>
-        <div class="tab-body active">
-          <div class="tab-body-item">
-            <div class="itema">
-              <div class="title overflow-hidden"><span class="title-prefix">·&nbsp;</span>可多次脱模的高性价比橡胶轮胎脱模剂
-              </div>
-              <div class="text overflow-hidden">
-                轮胎硫化、金属模具、硫化成型、多次脱模、胶囊
-              </div>
-            </div>
-          </div>
-          <div class="tab-body-item">
-            <div class="itema">
-              <div class="title overflow-hidden"><span class="title-prefix">·&nbsp;</span>重金属污染耕地修复用重金属稳定剂
-              </div>
-              <div class="text overflow-hidden">
-                聚谷氨酸、重金属稳定、生物硅、吸附材料、耕地修复
+        <template v-for="item in txtChilid">
+          <div class="tab-body active">
+            <div v-for="item in item.txtChild" class="tab-body-item">
+              <div class="itema">
+                <div class="title overflow-hidden"><span class="title-prefix">·&nbsp;</span>{{item.name}}</div>
+                <div class="text overflow-hidden">
+                  {{item.hidden}}
+                </div>
               </div>
             </div>
           </div>
-          <div class="tab-body-item">
-            <div class="itema">
-              <div class="title overflow-hidden"><span class="title-prefix">·&nbsp;</span>高塔水溶性复合肥生产技术
-              </div>
-              <div class="text overflow-hidden">
-                高氮复合肥、熔体造粒
-              </div>
-            </div>
+          <div class="tab-footer">
+            <span class="m-icon">
+              <i class="iconfont icon-new"></i>
+            </span>
+            <span class="text">
+              <span class="count" style="">{{item.count}}</span>
+              &nbsp;{{item.countName}}&gt;&gt;
+            </span>
           </div>
-          <div class="tab-body-item">
-            <div class="itema">
-              <div class="title overflow-hidden"><span class="title-prefix">·&nbsp;</span>［低成本］高效快速去除废水有机磷和次磷的技术
-              </div>
-              <div class="text overflow-hidden">
-                次磷高效去除、含磷废水处理、含磷农药废水处理、有机磷
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab-footer"><span class="m-icon"><i
-          class="iconfont icon-new"></i></span><span class="text"><span class="count" style="">2090</span>&nbsp;项优质技术项目正在寻求合作&gt;&gt;</span>
-        </div>
+        </template>
       </div>
     </div>
   </div>
@@ -95,18 +71,94 @@
         listId: 0,
         IsFlexUl: false,
         time: '',
+        txtIndex: 0,
         txtList: [
-          {}
-        ]
+          {
+            title: "热门技术",
+            txtChild: [
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂',
+                hidden: '高氮复合肥、熔体造粒'
+              },
+              {
+                name: '重金属污染耕地修复用重金属稳定剂',
+                hidden: '聚谷氨酸、重金属稳定、生物硅、吸附材料、耕地修复'
+              },
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂',
+                hidden: '高氮复合肥、熔体造粒'
+              },
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂',
+                hidden: '高氮复合肥、熔体造粒'
+              }
+            ],
+            count: 2090,
+            countName: '项优质技术项目正在寻求合作'
+          },
+          {
+            title: "热门活动",
+            txtChild: [
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂11111111111',
+                hidden: '高氮复合肥、熔体造粒'
+              },
+              {
+                name: '重金属污染耕地修复用重金属稳定剂',
+                hidden: '聚谷氨酸、重金属稳定、生物硅、吸附材料、耕地修复'
+              },
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂',
+                hidden: '高氮复合肥、熔体造粒'
+              },
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂',
+                hidden: '高氮复合肥、熔体造粒'
+              }
+            ],
+            count: 2090,
+            countName: '项优质技术项目正在寻求合作'
+          },
+          {
+            title: "热门资讯",
+            txtChild: [
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂',
+                hidden: '高氮复合肥、熔体造粒'
+              },
+              {
+                name: '重金属污染耕地修复用重金属稳定剂',
+                hidden: '聚谷氨酸、重金属稳定、生物硅、吸附材料、耕地修复'
+              },
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂',
+                hidden: '高氮复合肥、熔体造粒'
+              },
+              {
+                name: '可多次脱模的高性价比橡胶轮胎脱模剂',
+                hidden: '高氮复合肥、熔体造粒'
+              }
+            ],
+            count: 2090,
+            countName: '项优质技术项目正在寻求合作'
+          }
+        ],
+        txtChilid: []
       }
     },
     created() {
       this.time = setInterval(() => {
         this.setIntervalList(this.listId)
       }, 2000);
-
+      this.txtClick(0)
     },
     methods: {
+      txtClick(index) {
+
+        this.txtChilid = [this.txtList[index]];
+        this.txtIndex = index;
+        console.log(this.txtChilid)
+      },
       isSetInterval(id, isTrue) {
         let time = this.time;
         let ids = id
@@ -174,7 +226,7 @@
           font-size: 14px;
           text-decoration: underline;
           cursor: pointer;
-          .count{
+          .count {
             font-size: 18px;
           }
         }
