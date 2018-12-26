@@ -8,6 +8,7 @@
     <activity></activity>
     <eduSection></eduSection>
     <Success></Success>
+    <floatS></floatS>
   </div>
 </template>
 
@@ -21,6 +22,7 @@
   import activity from './activity/index.vue'//行业热门活动 技术交流盛会
   import eduSection from './eduSection/index.vue'//闯创新之道 登浪潮之巅
   import Success from './Success/index.vue'//成功案例
+  import floatS from './floatS/index.vue'//左边悬浮框
   export default {
     name: "homeComponents",
     components:{
@@ -31,7 +33,8 @@
       expert,
       activity,
       eduSection,
-      Success
+      Success,
+      floatS
     }
   }
 </script>

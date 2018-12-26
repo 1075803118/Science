@@ -3,17 +3,20 @@
     <v-header></v-header>
     <router-view/>
     <v-footer></v-footer>
+    <allFloat></allFloat>
   </div>
 </template>
 
 <script>
 import oneHead from '@/components/oneHead/index.vue'
 import oneFooter from '@/components/oneFooter/index.vue'
+import allFloat from '@/components/allFloat/index.vue'
 export default {
   name: 'App',
   components:{
     "v-header":oneHead,
-    "v-footer":oneFooter
+    "v-footer":oneFooter,
+    allFloat
   }
 }
 </script>
