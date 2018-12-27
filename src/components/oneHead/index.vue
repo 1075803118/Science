@@ -1,8 +1,8 @@
 <template>
-  <div class="header">
-    <div class="header-nav ">
+  <div class="header" :style="{background:backgrounds}">
+    <div class="header-nav">
       <ul class="header-nav-left">
-        <li v-for="(item,index) in topList" :class="{'header-left-logo':index==0,active:index==Imessage}" @click="ItemClick(index)">
+        <li v-for="(item,index) in topList" :class="{'header-left-logo':index===0,active:index===Imessage}" @click="ItemClick(index)">
           <div class="item">
             {{item.name}}
           </div>
@@ -16,43 +16,56 @@
         </li>
       </ul>
       <div class="header-nav-right">
-       <div class="header-nav-user">
-         <div class="user-logo">
-           <div class="msg-hint" style=""></div>
-           <div class="m-cover">彭</div>
-           <span class="m-icon">
+        <div class="header-nav-user">
+          <div class="btn-to-login" @click="login">
+            <span class="m-icon">
+             <i class="m-icon fa fa-user-circle-o" aria-hidden="true"></i>
+            </span>登录
+          </div>
+          <div v-if="false">
+            <div class="user-logo">
+              <div class="msg-hint"></div>
+              <div class="m-cover">彭</div>
+              <span class="m-icon">
             <i class="fa angle-down fa-2x"></i>
            </span>
-         </div>
-         <div class="m-show-target">
-           <div class="target-list">
-             <div class="target-item">个人中心</div>
-             <div class="target-item">登出</div>
-           </div>
-         </div>
-       </div>
-        <div class="m-hover-show-container"><div class="m-hover-trigger"><div class="btnf">
-          发布
-        </div></div><div class="m-show-target">
-          <div class="m-show-target-wrapper">
-            <div class="btn-release-demand-container">
-              <div class="demand-a">
-                <i class="iconfont icon-chanpinjishu"></i>
-              </div>
-              <div class="m-link">发布技术</div>
             </div>
-            <div class="divider"></div>
-            <div class="btn-release-demand-container">
-              <div class="demand-a active">
-                <i class="iconfont icon-xuqiu1"></i></div>
-              <div class="m-link">发布需求</div>
-            </div></div></div></div>
+            <div class="m-show-target">
+              <div class="target-list">
+                <div class="target-item">个人中心</div>
+                <div class="target-item">登出</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-hover-show-container">
+          <div class="m-hover-trigger">
+            <div class="btnf">
+              发布
+            </div>
+          </div>
+          <div class="m-show-target">
+            <div class="m-show-target-wrapper">
+              <div class="btn-release-demand-container">
+                <div class="demand-a">
+                  <i class="iconfont icon-chanpinjishu"></i>
+                </div>
+                <div class="m-link">发布技术</div>
+              </div>
+              <div class="divider"></div>
+              <div class="btn-release-demand-container">
+                <div class="demand-a active">
+                  <i class="iconfont icon-xuqiu1"></i></div>
+                <div class="m-link">发布需求</div>
+              </div></div></div></div>
       </div>
     </div>
+    <back :flag="flag" @close="close"></back>
   </div>
 </template>
 
 <script>
+  import back from './back/back'
   export default {
     name: "oneHead",
     data(){
@@ -103,25 +116,41 @@
             href:'/'
           }
         ],
+        flag:false,
         lIndex:0
       }
     },
     computed:{
       Imessage(){
-        return this.lIndex<=0?1:this.lIndex
+        return this.lIndex<=0 ? 1:this.lIndex
       }
     },
+    props:{
+      backgrounds:{
+        type:String,
+        default:null
+      }
+    },
+    components:{
+      back,
+    },
     methods:{
+      close(){
+        this.flag = false
+      },
+      login(){
+        this.flag = true
+      },
       ItemClick(index){
         this.lIndex = index
-      }
+      },
     }
   }
 </script>
 
 <style lang="less">
   .header{
-    position: absolute;
+    position: fixed;
     width: 100%;
     background: transparent;
     color: #fff;
@@ -174,7 +203,7 @@
             border-bottom: 2px solid #fff;
           }
           &:hover .m-show-target{
-              display: block;
+            display: block;
           }
           .m-show-target{
             display: none;
@@ -215,6 +244,19 @@
           height: 30px;
           &:hover .m-show-target{
             display: block;
+          }
+          .btn-to-login {
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            .m-icon{
+              float: left;
+              margin-right: 4px;
+              width: 30px;
+              height: 30px;
+              font-size: 26px;
+            }
           }
           .user-logo{
             position: relative;

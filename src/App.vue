@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <v-header :backgrounds="this.$route.meta.background"></v-header>
     <router-view/>
     <v-footer></v-footer>
     <allFloat></allFloat>
@@ -8,26 +8,39 @@
 </template>
 
 <script>
-import oneHead from '@/components/oneHead/index.vue'
-import oneFooter from '@/components/oneFooter/index.vue'
-import allFloat from '@/components/allFloat/index.vue'
-export default {
-  name: 'App',
-  components:{
-    "v-header":oneHead,
-    "v-footer":oneFooter,
-    allFloat
+  import oneHead from '@/components/oneHead/index.vue'
+  import oneFooter from '@/components/oneFooter/index.vue'
+  import allFloat from '@/components/allFloat/index.vue'
+  export default {
+    name: 'App',
+    components:{
+      "v-header":oneHead,
+      "v-footer":oneFooter,
+      allFloat
+    },
+    watch: {
+      $route( to , from ){
+        if(to.path === '/'){
+          window.addEventListener('scroll',()=>{
+            let top = document.body.scrollTop + document.documentElement.scrollTop;
+            if(top>550){
+              console.log(this.$route.meta.background)
+              this.$route.meta.background = "#000"
+            }
+          })
+        }
+      }
+    },
   }
-}
 </script>
 
 <style lang="less">
   @import "assets/base.css";
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   *,:after, :before{
     box-sizing: border-box;
     margin: 0;

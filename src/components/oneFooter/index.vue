@@ -90,11 +90,13 @@
 
 <style lang="less">
   .footer-wrapper {
+    position: absolute;
     bottom: 0;
     width: 100%;
     min-width: 1240px;
     height: 327px;
     background-color: #2c2c2c;
+    z-index: 1;
     .footer {
       padding-top: 41px;
       color: #999;

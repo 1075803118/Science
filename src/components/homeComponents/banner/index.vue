@@ -170,8 +170,6 @@
             this.setIntervalList(ids)
           }, 2000);
         }
-        console.log(id)
-
       },
       setIntervalList(id) {
         let listId = id;
@@ -180,7 +178,6 @@
           listId = 0
         }
         this.listId = listId;
-        console.log(this.listId)
       },
       mouseoverS(id) {
         this.IsFlexUl = true
