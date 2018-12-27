@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :style="{background:backgrounds,position:classFixed,boxShadow:classShadow}" >
+  <div class="header" :style="{background:backgrounds,position:classFixed,boxShadow:classShadow}">
     <div class="header-nav">
       <ul class="header-nav-left">
         <li v-for="(item,index) in topList" :class="{'header-left-logo':index==0,active:index==Imessage}"
@@ -16,6 +16,9 @@
           </div>
         </li>
       </ul>
+      <div class="searchbar-container" style="display: none">
+        <button type="submit" class="m-icon"><i class="iconfont icon-sousuo"></i></button>
+        <input type="text" name="text" placeholder="" autocomplete="off" class="searchbar-input"></div>
       <div class="header-nav-right">
         <div class="header-nav-user">
           <div class="btn-to-login" @click="login">
@@ -135,11 +138,11 @@
         type: String,
         default: null
       },
-      classFixed:{
+      classFixed: {
         type: String,
         default: null
       },
-      classShadow:{
+      classShadow: {
         type: String,
         default: null
       }
@@ -175,6 +178,29 @@
     }
     a {
       display: block;
+    }
+    .searchbar-container{
+      flex: 1;
+      position: relative;
+      padding: 0 20px;
+      height: 30px;
+      .searchbar-input{
+        padding-left: 16px;
+        padding-right: 36px;
+        width: 100%;
+        height: 30px;
+        border: none;
+        border-radius: 50px;
+        color: #333;
+        font-size: 14px;
+      }
+      .m-icon{
+        position: absolute;
+        top: 0;
+        right: 26px;
+        background-color: transparent;
+        border: none;
+      }
     }
     &-nav {
       display: -ms-flexbox;
