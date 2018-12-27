@@ -20,13 +20,17 @@
         </li>
         <li class="sort-list-item"><b>发布时间<span class="m-icon"><i class="iconfont icon-paixu"></i></span></b></li>
       </ul>
+      <technologyList></technologyList>
+      <recommend></recommend>
     </div>
   </div>
 </template>
 
 <script>
   import twoHead from '@/components/twoHead/index.vue' //技术带背景头部
-  import screen from '@/components/screen/index.vue' //技术带背景头部
+  import screen from '@/components/screen/index.vue' //screen
+  import technologyList from '@/components/homeComponents/technology/list/index.vue'
+  import recommend from '@/components/recommend/index.vue'
 
   export default {
     name: "allTechnology",
@@ -38,13 +42,21 @@
     },
     components: {
       twoHead,
-      screen
+      screen,
+      technologyList,
+      recommend
     }
   }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
     .allTechnology{
+      .technology-list-item{
+        position: relative;
+        margin-top: 35px;
+        padding: 0 25px;
+        min-height: 260px;
+      }
       .sort-list{
         margin-top: 30px;
         width: 100%;

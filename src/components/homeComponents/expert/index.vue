@@ -107,6 +107,9 @@
 </script>
 
 <style lang="less">
+  .section-block .expert{
+    display: flex;
+  }
   .section-block .expert .technology-list-item{
     position: relative;
     width: 307px;
