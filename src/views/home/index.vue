@@ -6,7 +6,7 @@
 
 <script>
 
-  import homeComponents from '@/components/homeComponents/homeComponents.vue'    //头部轮播加新闻
+  import homeComponents from '@/components/homeComponents/homeComponents.vue'    //首页所有元素结合
   export default {
     name: "home",
     components:{

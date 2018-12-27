@@ -20,6 +20,11 @@ export default new Router({
         background:"#000",
       },
       component: resolve => require(["@/views/registration/registration.vue"], resolve)
+    },
+    {
+      path: '/allTechnology',
+      name: 'allTechnology',
+      component: resolve => require(["@/views/allTechnology/index.vue"], resolve)
     }
 
   ]

@@ -2,13 +2,14 @@
   <div class="header" :style="{background:backgrounds}">
     <div class="header-nav">
       <ul class="header-nav-left">
-        <li v-for="(item,index) in topList" :class="{'header-left-logo':index===0,active:index===Imessage}" @click="ItemClick(index)">
+        <li v-for="(item,index) in topList" :class="{'header-left-logo':index==0,active:index==Imessage}"
+            @click.stop="ItemClick(index,item.href)">
           <div class="item">
             {{item.name}}
           </div>
           <div class="m-show-target" v-if="item.child">
             <div class="target-list">
-              <div class="target-item"  v-for="items in item.child">
+              <div class="target-item" v-for="items in item.child">
                 {{items.name}}
               </div>
             </div>
@@ -57,7 +58,10 @@
                 <div class="demand-a active">
                   <i class="iconfont icon-xuqiu1"></i></div>
                 <div class="m-link">发布需求</div>
-              </div></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <back :flag="flag" @close="close"></back>
@@ -66,99 +70,102 @@
 
 <script>
   import back from './back/back'
+
   export default {
     name: "oneHead",
-    data(){
-      return{
-        topList:[
+    data() {
+      return {
+        topList: [
           {
-            name:'',
-            href:'/'
+            name: '',
+            href: '/'
           },
           {
-            name:'首页',
-            href:'/'
+            name: '首页',
+            href: '/'
           },
           {
-            name:'技术',
-            href:'/',
-            child:[
+            name: '技术',
+            href: '/allTechnology',
+            child: [
               {
-                name:'所有技术',
-                href:'/',
+                name: '所有技术',
+                href: '/allTechnology',
               },
               {
-                name:'所有技术',
-                href:'/',
+                name: '所有技术111',
+                href: '/',
               }
             ]
           },
           {
-            name:'智库',
-            href:'/',
-            child:[
+            name: '智库',
+            href: '/',
+            child: [
               {
-                name:'所有技术',
-                href:'/',
+                name: '所有技术',
+                href: '/',
               },
               {
-                name:'所有技术',
-                href:'/',
+                name: '所有技术',
+                href: '/',
               }
             ]
           },
           {
-            name:'活动',
-            href:'/'
+            name: '活动',
+            href: '/'
           },
           {
-            name:'资讯',
-            href:'/'
+            name: '资讯',
+            href: '/'
           }
         ],
-        flag:false,
-        lIndex:0
+        flag: false,
+        lIndex: 0
       }
     },
-    computed:{
-      Imessage(){
-        return this.lIndex<=0 ? 1:this.lIndex
+    computed: {
+      Imessage() {
+        return this.lIndex <= 0 ? 1 : this.lIndex
       }
     },
-    props:{
-      backgrounds:{
-        type:String,
-        default:null
+    props: {
+      backgrounds: {
+        type: String,
+        default: null
       }
     },
-    components:{
+    components: {
       back,
     },
-    methods:{
-      close(){
+    methods: {
+      close() {
         this.flag = false
       },
-      login(){
+      login() {
         this.flag = true
       },
-      ItemClick(index){
+      ItemClick(index, href) {
         this.lIndex = index
-      },
-    }
+        this.$router.push(href)
+        console.log(href)
+      }
+    },
   }
 </script>
 
 <style lang="less">
-  .header{
-    position: fixed;
+  .header {
+    position: absolute;
     width: 100%;
     background: transparent;
     color: #fff;
     z-index: 99;
-    &.active{
+    &.active {
       background: #000;
     }
-    a{
+    a {
       display: block;
     }
     &-nav {
@@ -169,22 +176,22 @@
       margin: 0 auto;
       width: 1240px;
       letter-spacing: 1px;
-      &-left,&-right {
+      &-left, &-right {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: justify;
         justify-content: space-between;
 
       }
-      &-left{
-        .header-left-logo{
+      &-left {
+        .header-left-logo {
           margin-top: 0;
           margin-right: 40px;
           width: 50px;
           height: 70px;
           background: url("../../assets/logo.png") no-repeat 50%
         }
-        li{
+        li {
           width: 34px;
           margin: 0 10px;
           text-align: center;
@@ -194,18 +201,18 @@
           line-height: 30px;
           cursor: pointer;
           position: relative;
-          .item:hover{
+          .item:hover {
             font-weight: 700;
           }
-          &.active .item{
+          &.active .item {
             color: #fff;
             font-weight: 700;
             border-bottom: 2px solid #fff;
           }
-          &:hover .m-show-target{
+          &:hover .m-show-target {
             display: block;
           }
-          .m-show-target{
+          .m-show-target {
             display: none;
             padding-top: 4px;
             width: 84px;
@@ -216,33 +223,33 @@
             position: absolute;
             z-index: 11;
             left: -25px;
-            .target-list{
+            .target-list {
               display: flex;
               flex-direction: column;
               align-items: center;
               justify-content: center;
               height: 100%;
               font-size: 12px;
-              .target-item{
+              .target-item {
                 box-sizing: content-box;
                 height: 24px;
                 line-height: 24px;
-                &:first-child{
-                  border-bottom:1px solid #fff;
+                &:first-child {
+                  border-bottom: 1px solid #fff;
                 }
               }
             }
           }
         }
       }
-      &-right{
-        .header-nav-user{
+      &-right {
+        .header-nav-user {
           margin-left: 10px;
           margin-top: 20px;
           margin-right: 20px;
           width: 64px;
           height: 30px;
-          &:hover .m-show-target{
+          &:hover .m-show-target {
             display: block;
           }
           .btn-to-login {
@@ -250,7 +257,7 @@
             line-height: 30px;
             font-size: 14px;
             cursor: pointer;
-            .m-icon{
+            .m-icon {
               float: left;
               margin-right: 4px;
               width: 30px;
@@ -258,7 +265,7 @@
               font-size: 26px;
             }
           }
-          .user-logo{
+          .user-logo {
             position: relative;
             display: flex;
             -ms-flex-pack: center;
@@ -269,7 +276,7 @@
             line-height: 30px;
             color: #fff;
             cursor: pointer;
-            .msg-hint{
+            .msg-hint {
               position: absolute;
               left: 39px;
               width: 10px;
@@ -277,7 +284,7 @@
               border-radius: 10px;
               background-color: red;
             }
-            .m-cover{
+            .m-cover {
               margin-right: 6px;
               width: 30px;
               height: 30px;
@@ -287,16 +294,16 @@
               color: #fff;
               text-align: center;
             }
-            .m-icon{
+            .m-icon {
               margin-right: 10px;
               transform: rotate(180deg);
             }
           }
         }
-        .m-show-target{
+        .m-show-target {
           position: relative;
           display: none;
-          .target-list{
+          .target-list {
             position: absolute;
             z-index: 11;
             color: #fff;
@@ -307,37 +314,37 @@
             font-size: 14px;
             padding: 10px 0;
             box-sizing: border-box;
-            .target-item{
+            .target-item {
               padding: 0 10px;
               line-height: 30px;
               color: #fff;
               cursor: pointer;
-              &:hover{
+              &:hover {
                 background: #999;
               }
             }
 
           }
         }
-        .m-hover-show-container{
+        .m-hover-show-container {
           width: 50px;
           cursor: default;
           position: relative;
-          &:hover{
-            .m-hover-trigger .btnf{
+          &:hover {
+            .m-hover-trigger .btnf {
               background-color: #286090;
               border-color: #204d74;
             }
-            .m-show-target{
+            .m-show-target {
               display: block;
             }
 
           }
-          .m-show-target{
+          .m-show-target {
             left: -67px;
             top: 45px;
             position: absolute;
-            .m-show-target-wrapper{
+            .m-show-target-wrapper {
               display: flex;
               justify-content: space-around;
               padding: 36px 8px 16px 10px;
@@ -347,22 +354,22 @@
               background: url(../../assets/release-btns-container-border.png) no-repeat bottom;
               background-size: contain;
               box-sizing: border-box;
-              .divider{
+              .divider {
                 height: 52px;
                 width: 1px;
                 background-color: #fff;
               }
-              .btn-release-demand-container{
+              .btn-release-demand-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 font-size: 12px;
                 color: #fff;
-                .m-link{
+                .m-link {
                   margin-top: 10px;
                   cursor: pointer;
                 }
-                .demand-a{
+                .demand-a {
                   box-sizing: border-box;
                   width: 40px;
                   height: 40px;
@@ -372,10 +379,10 @@
                   font-size: 22px;
                   text-align: center;
                   cursor: pointer;
-                  background: linear-gradient(#2b90e2,#156fb8);
-                  &.active{
+                  background: linear-gradient(#2b90e2, #156fb8);
+                  &.active {
                     font-size: 18px;
-                    background: linear-gradient(#fec53e,#fe7b24);
+                    background: linear-gradient(#fec53e, #fe7b24);
                   }
                 }
 
@@ -383,10 +390,10 @@
             }
           }
 
-          .m-hover-trigger{
+          .m-hover-trigger {
             cursor: pointer;
             padding-top: 22px;
-            .btnf{
+            .btnf {
               display: block;
               padding: 5px 9px;
               border-radius: 5px;

@@ -34,6 +34,19 @@
 
 <style lang="less">
 
+  @media screen and (max-width: 1340px) {
+    .floatS.floor-nav-container {
+      margin-left:0;
+      left: 10px
+    }
+  }
+
+  @media screen and (min-width: 1340px) {
+    .floatS.floor-nav-container {
+      margin-left:50%;
+      left: -720px
+    }
+  }
   .floatS.floor-nav-container{
     position: fixed;
     bottom: 12%;
@@ -41,8 +54,6 @@
     width: 46px;
     z-index: 10;
     color: #fff;
-    margin-left: 50%;
-    left: -720px;
     font-size: 14px;
     background-color: #086dbb;
     display: none;

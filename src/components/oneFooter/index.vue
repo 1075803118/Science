@@ -90,8 +90,6 @@
 
 <style lang="less">
   .footer-wrapper {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     min-width: 1240px;
     height: 327px;
