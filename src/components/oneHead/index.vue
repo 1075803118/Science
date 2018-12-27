@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :style="{background:backgrounds}">
+  <div class="header" :style="{background:backgrounds,position:classFixed,boxShadow:classShadow}" >
     <div class="header-nav">
       <ul class="header-nav-left">
         <li v-for="(item,index) in topList" :class="{'header-left-logo':index==0,active:index==Imessage}"
@@ -132,6 +132,14 @@
     },
     props: {
       backgrounds: {
+        type: String,
+        default: null
+      },
+      classFixed:{
+        type: String,
+        default: null
+      },
+      classShadow:{
         type: String,
         default: null
       }
