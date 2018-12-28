@@ -23,14 +23,40 @@
           <li class="sort-list-item"><b>发布时间<span class="m-icon"><i class="iconfont icon-paixu"></i></span></b></li>
         </ul>
       </div>
+<<<<<<< HEAD
+=======
+    </two-head>
+    <div class="w">
+      <screen></screen>
+      <ul class="sort-list">
+        <li class="sort-list-item active"><b>默认</b></li>
+        <li class="sort-list-item sort-childlist-container"><b>关注度<span class="m-icon"><i class="iconfont icon-paixu"></i></span></b>
+          <ul class="sort-childlist">
+            <li class="sort-childlist-item">按周</li>
+            <li class="sort-childlist-item">按月</li>
+            <li class="sort-childlist-item">累计</li>
+          </ul>
+        </li>
+        <li class="sort-list-item"><b>发布时间<span class="m-icon"><i class="iconfont icon-paixu"></i></span></b></li>
+      </ul>
+      <technologyList></technologyList>
+      <recommend></recommend>
+>>>>>>> 5e805f9bfdbd9fac8a9a4d6ee605e9d57ef307d6
     </div>
   </div>
 </template>
 
 <script>
   import twoHead from '@/components/twoHead/index.vue' //技术带背景头部
+<<<<<<< HEAD
   import screen from '@/components/screen/index.vue' //技术带背景头部
   import oneHead from '@/components/oneHead/index.vue'
+=======
+  import screen from '@/components/screen/index.vue' //screen
+  import technologyList from '@/components/homeComponents/technology/list/index.vue'
+  import recommend from '@/components/recommend/index.vue'
+
+>>>>>>> 5e805f9bfdbd9fac8a9a4d6ee605e9d57ef307d6
   export default {
     name: "allTechnology",
     data() {
@@ -44,6 +70,7 @@
     },
     components: {
       twoHead,
+<<<<<<< HEAD
       "v-Head":oneHead,
       screen
     },
@@ -63,10 +90,16 @@
           this.classShadow = this.$route.meta.boxShadow
         }
       }
+=======
+      screen,
+      technologyList,
+      recommend
+>>>>>>> 5e805f9bfdbd9fac8a9a4d6ee605e9d57ef307d6
     }
   }
 </script>
 
+<<<<<<< HEAD
 <style scoped lang="less">
   .allTechnology{
     .sort-list{
@@ -78,6 +111,19 @@
         float: left;
         margin-right: -1px;
         width: 100px;
+=======
+<style lang="less">
+    .allTechnology{
+      .technology-list-item{
+        position: relative;
+        margin-top: 35px;
+        padding: 0 25px;
+        min-height: 260px;
+      }
+      .sort-list{
+        margin-top: 30px;
+        width: 100%;
+>>>>>>> 5e805f9bfdbd9fac8a9a4d6ee605e9d57ef307d6
         height: 40px;
         line-height: 40px;
         border: 1px solid #d7d6d6;
