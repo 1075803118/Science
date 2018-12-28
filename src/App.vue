@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <v-header :backgrounds="this.$route.meta.background" :classFixed="classFixed" :classShadow="classShadow"></v-header>
     <router-view/>
     <v-footer></v-footer>
     <allFloat></allFloat>
@@ -8,40 +7,14 @@
 </template>
 
 <script>
-  import oneHead from '@/components/oneHead/index.vue'
+
   import oneFooter from '@/components/oneFooter/index.vue'
   import allFloat from '@/components/allFloat/index.vue'
   export default {
     name: 'App',
     components:{
-      "v-header":oneHead,
       "v-footer":oneFooter,
       allFloat
-    },
-    data(){
-      return{
-        classFixed:"absolute",
-        classShadow:''
-      }
-    },
-    watch: {
-      $route( to , from ){
-        if(to.path === '/'){
-          window.addEventListener('scroll',()=>{
-            let top = document.body.scrollTop + document.documentElement.scrollTop;
-            if(top>550){
-              console.log(this.$route.meta.background)
-              this.classFixed = "fixed"
-              this.$route.meta.background = "#2c2c2c"
-              this.classShadow= '0 2px 4px #2c2c2c';
-            }else{
-              this.classFixed = "absolute"
-              this.$route.meta.background = "transparent"
-              this.classShadow= '';
-            }
-          })
-        }
-      }
     },
   }
 </script>

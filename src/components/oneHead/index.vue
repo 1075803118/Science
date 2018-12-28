@@ -54,13 +54,13 @@
                 <div class="demand-a">
                   <i class="iconfont icon-chanpinjishu"></i>
                 </div>
-                <div class="m-link">发布技术</div>
+                <router-link to="/jishu" tag ="div" class="m-link">发布技术</router-link>
               </div>
               <div class="divider"></div>
               <div class="btn-release-demand-container">
                 <div class="demand-a active">
                   <i class="iconfont icon-xuqiu1"></i></div>
-                <div class="m-link">发布需求</div>
+                <router-link to="/xuqiu" tag ="div" class="m-link">发布需求</router-link>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
       },
       classShadow: {
         type: String,
-        default: null
+        default:null
       }
     },
     components: {
@@ -160,7 +160,6 @@
       ItemClick(index, href) {
         this.lIndex = index
         this.$router.push(href)
-        console.log(href)
       }
     },
   }
@@ -168,11 +167,10 @@
 
 <style lang="less">
   .header {
-    position: absolute;
     width: 100%;
-    background: transparent;
     color: #fff;
     z-index: 99;
+    height: 70px;
     &.active {
       background: #000;
     }
