@@ -3,156 +3,7 @@
     <div class="list-header">
       <div class="filter-wrapper">
         <nav>
-          <article class="filter">
-            <div class="filter-label">所属领域</div>
-            <ul class="filter-items">
-              <li class="filter-item">
-                <div class="item-content"><span class="no-limit">不限</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content active"><span>能源电力</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>环境工程</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>化学化工</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>材料科技</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>生农医药</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>机械电子</span></div>
-              </li>
-            </ul>
-            <div class="more" style=""><span class="m-icon"><i class="fa fa-chevron-circle-down"></i></span></div>
-          </article>
-          <article class="filter">
-            <div class="filter-label">应用行业</div>
-            <ul class="filter-items">
-              <li class="filter-item">
-                <div class="item-content active"><span class="no-limit">不限</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>环保行业</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>化工新材料行业</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>IT|通信|电子|互联网</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>生产|加工|制造</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>能源|电力</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>其它</span></div>
-              </li>
-            </ul>
-            <div class="more" style="display: none;"><span class="m-icon"><i class="iconfont icon-more"></i></span></div>
-          </article>
-          <article class="filter">
-            <div class="filter-label">成熟度</div>
-            <ul class="filter-items">
-              <li class="filter-item">
-                <div class="item-content active"><span class="no-limit">不限</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>小试</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>中试</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>生试</span></div>
-              </li>
-            </ul>
-            <div class="more" style="display: none;"><span class="m-icon"><i class="iconfont icon-more"></i></span></div>
-          </article>
-          <article class="filter">
-            <div class="filter-label">来源地</div>
-            <ul class="filter-items">
-              <li class="filter-item">
-                <div class="item-content active"><span class="no-limit">不限</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>中国</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>中国(香港)</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>中国(台湾)</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>美国</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>德国</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>英国</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>日本</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>俄罗斯</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>法国</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>荷兰</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>新加坡</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>以色列</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>澳大利亚</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>奥地利</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>加拿大</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>芬兰</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>韩国</span></div>
-              </li>
-            </ul>
-            <div class="more"><span class="m-icon"><i class="iconfont icon-more"></i></span></div>
-          </article>
-          <article class="filter">
-            <div class="filter-label">合作标签</div>
-            <ul class="filter-items">
-              <li class="filter-item">
-                <div class="item-content active"><span class="no-limit">不限</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>股权融资合作</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>市场渠道合作</span></div>
-              </li>
-              <li class="filter-item">
-                <div class="item-content"><span>落地孵化合作</span></div>
-              </li>
-            </ul>
-            <div class="more" style="display: none;"><span class="m-icon"><i class="iconfont icon-more"></i></span></div>
-          </article>
+          <choice :list="list"></choice>
         </nav>
       </div>
       <div class="list-filter-right">
@@ -171,8 +22,93 @@
 </template>
 
 <script>
+  import choice from '../screen/child/choice.vue'
   export default {
-    name: "screen"
+    name: "screen",
+    components:{
+      choice
+    },
+    data(){
+      return{
+        list:[
+          {
+            name:'所属领域',
+            child:[
+              {
+                name:'不限'
+              },
+              {
+                name:'能源电力'
+              },
+              {
+                name:'环境工程'
+              },
+              {
+                name:'化学化工'
+              },
+              {
+                name:'材料科技'
+              },
+              {
+                name:'生农医药'
+              },
+              {
+                name:'机械电子'
+              }
+            ]
+          },
+          {
+            name:'应用行业',
+            child:[
+              {
+                name:'不限'
+              },
+              {
+                name:'环境工程'
+              },
+              {
+                name:'化学化工'
+              },
+              {
+                name:'材料科技'
+              },
+              {
+                name:'生农医药'
+              },
+              {
+                name:'机械电子'
+              },
+              {
+                name:'机械电子'
+              },
+              {
+                name:'机械电子'
+              },
+              {
+                name:'机械电子'
+              },
+              {
+                name:'机械电子'
+              },
+              {
+                name:'机械电子5555'
+              }
+            ]
+          }
+        ],
+      }
+    },
+    created(){
+
+
+      // var heightCss = window.getComputedStyle(this.$refs.ul).height;
+    },
+    mounted(){
+
+    },
+    methods:{
+
+    }
   }
 </script>
 
@@ -201,9 +137,11 @@
                 color: #707070;
                 font-size: 14px;
                 text-align: left;
-                height: 55px;
                 overflow: hidden;
                 transition: height .1s;
+                &.active{
+                  height: 55px;
+                }
                 .filter-label{
                   position: absolute;
                   height: 45px;
@@ -352,11 +290,18 @@
   .filter .more{
     position: absolute;
     cursor: pointer;
-    top: 10px;
+    top: 16px;
     right: 10px;
     height: 20px;
-    transform: rotate(-180deg);
     transition: transform .1s;
+    transform: rotate(0deg);
+    display: none;
+    &.active{
+      display: block;
+    }
+    &.flg{
+      transform: rotate(-180deg);
+    }
     .m-icon{
       display: block;
       width: 20px;
