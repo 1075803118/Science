@@ -9,7 +9,7 @@
           </div>
           <div class="m-show-target" v-if="item.child">
             <div class="target-list">
-              <div class="target-item" v-for="items in item.child">
+              <div class="target-item" v-for="items in item.child" @click.stop="ItemClick(index,items.href)">
                 {{items.name}}
               </div>
             </div>
@@ -97,13 +97,13 @@
               },
               {
                 name: '所有技术111',
-                href: '/',
+                href: '/hhhhhh',
               }
             ]
           },
           {
             name: '智库',
-            href: '/',
+            href: '/experts',
             child: [
               {
                 name: '所有技术',
@@ -159,6 +159,7 @@
       },
       ItemClick(index, href) {
         this.lIndex = index
+        console.log(href)
         this.$router.push(href)
       }
     },

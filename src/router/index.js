@@ -42,6 +42,17 @@ export default new Router({
       component: resolve => require(["@/views/allTechnology/index.vue"], resolve)
     },
     {
+      path: '/experts',
+      name: 'experts',
+      meta:{
+        classFixed:'absolute',
+        background:"transparent",
+        boxShadow:"",
+        auth:false
+      },
+      component: resolve => require(["@/views/experts/index.vue"], resolve)
+    },
+    {
       path: '/jishu',
       name: 'jishu',
       meta:{

@@ -92,5 +92,87 @@
 </script>
 
 <style lang="less">
-
+  .filter{
+    position: relative;
+    margin-bottom: 0;
+    list-style: none;
+    color: #707070;
+    font-size: 14px;
+    text-align: left;
+    overflow: hidden;
+    transition: height .1s;
+    &.active{
+      height: 55px;
+    }
+    .filter-label{
+      position: absolute;
+      height: 45px;
+      line-height: 45px;
+      font-weight: 700;
+    }
+    .filter-items{
+      position: relative;
+      padding-left: 94px;
+      margin-bottom: 10px;
+      .filter-item{
+        display: inline-block;
+        margin-top: 9px;
+        margin-right: 15px;
+        .item-content{
+          cursor: pointer;
+          display: inline-block;
+          span{
+            position: relative;
+            display: block;
+            padding: 7px 12px;
+            line-height: 1;
+            overflow: hidden;
+          }
+          &.active{
+            span{
+              background-color: #e3f1ff;
+              color: #0a539a;
+              outline: 1px solid #4dafed;
+              &.no-limit{
+                &:before{
+                  content: "";
+                  background-color: transparent;
+                }
+                &:after{
+                  content: "";
+                  position: absolute;
+                  top: -3px;
+                  right: 2px;
+                  color: #fff;
+                  font-size: 10px;
+                }
+              }
+              &:before{
+                position: absolute;
+                top: -18px;
+                right: -50%;
+                content: " ";
+                width: 100%;
+                height: 28px;
+                transform: rotate(35deg);
+                -ms-transform: rotate(35deg);
+                -moz-transform: rotate(35deg);
+                -webkit-transform: rotate(35deg);
+                -o-transform: rotate(35deg);
+                background-color: #5babfa;
+              }
+              &:after{
+                content: "x";
+                position: absolute;
+                top: -3px;
+                right: 2px;
+                color: #fff;
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 </style>
