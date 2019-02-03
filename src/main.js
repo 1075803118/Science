@@ -3,15 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import './permission.js'
+import './util/permission.js'
+import Axios from './util/ajax.js'
 import 'font-awesome/css/font-awesome.min.css'
-
+import store from './store'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 Vue.config.productionTip = false
-
+Vue.prototype.$http = Axios
+Vue.use(ElementUI)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -1,8 +1,7 @@
-import router from './router'
-
+import router from '../router'
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.auth)) { // 判断该路由是否需要登录权限
-    if (localStorage.getItem('user')) { // 判断当前的token是否存在
+    if (localStorage.getItem('sessionID')) { // 判断当前的token是否存在
       next()
     } else {
       next({
