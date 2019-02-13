@@ -1,14 +1,13 @@
 <template>
   <div class="banner">
     <ul class="banner-img">
-      <li v-for="(item,index) in urlList" :class="{active:index === listId}" @mouseenter="mouseoverS(index)"
-          @mouseleave="mouseoutS(index)">
-        <img :src="item.img">
+      <li v-for="(item,index) in urlList" :class="{active:index === listId}" @mouseenter="mouseoverS(index)" @mouseleave="mouseoutS(index)">
+        <img :src="'http://47.94.156.220:8080'+item.webUrl">
       </li>
     </ul>
     <div class="w">
       <ul class="flex" :class="{active:true}">
-        <li v-for="(item,index) in urlList" :class="{active:index===listId}" @mouseenter="mouseoverSL(index)">
+        <li v-for="(item,index) in urlList" :class="{active:index===listId}" @mouseenter="mouseoverSL(index)" :style="{ width: + 100 /urlList.length+'%'}">
           {{item.name}}
         </li>
       </ul>
@@ -147,17 +146,21 @@
       }
     },
     created() {
+      this.bannerAction()
       this.time = setInterval(() => {
         this.setIntervalList(this.listId)
       }, 2000);
       this.txtClick(0)
     },
     methods: {
+      bannerAction(){
+        this.$http.post('/f/show/banners').then((res) => {
+         this.urlList = res.data.body.rows
+        })
+      },
       txtClick(index) {
-
         this.txtChilid = [this.txtList[index]];
         this.txtIndex = index;
-        console.log(this.txtChilid)
       },
       isSetInterval(id, isTrue) {
         let time = this.time;
@@ -346,7 +349,6 @@
         bottom: 3px;
       }
       li {
-        width: 33.3333%;
         background-color: rgba(0, 0, 0, .2);
         cursor: pointer;
         &.active {
@@ -366,6 +368,12 @@
       z-index: 9;
       transition: all 1s;
       cursor: pointer;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      img{
+        width: 100%;
+      }
       &.active {
         opacity: 1;
       }

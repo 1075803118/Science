@@ -23,7 +23,7 @@ export default {
   getUserLoginPhone({commit},user){
     Axios.post('/f/login',{
       username:user.phone,
-      radmonCode:user.code,
+      randomCode:user.code,
       loginType:"customer"
     }).then((res)=>{
 

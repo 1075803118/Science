@@ -130,12 +130,13 @@
           phone:this.loginUser.phone,
           code:this.loginUser.code
         }
-        if(phone === '' || code === ''){
+        if(phone !== '' || code !== ''){
+          this.getUserLoginPhone(user)
+        }else{
           this.$alert('手机号不能为空或者验证码不能为空', '提示', {
             confirmButtonText: '确定',
           });
         }
-        this.getUserLoginPhone(user)
       },
       login(){
         this.toggle = !this.toggle
